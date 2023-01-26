@@ -30,9 +30,8 @@ export const getDb = async () => {
   const request = store.get(1);
   const result = await request;
   console.log("result.value", result);
-  console.log(result.cont);
-  if (!result.cont | result == undefined) {
-    return;
+  if (result == undefined || !result.cont) {
+    return false;
   } else {
     return result.cont;
   }
