@@ -10,9 +10,8 @@
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "npm run build && cd server && node server.js",
     "server": "cd server nodemon server.js --ignore client",
-    "heroku-prebuild": "npm install --dev",
     "build": "cd client && npm run build",
-    "install": "cd server && npm i && cd ../client && npm i",
+    "install": "cd server && npm i --include=dev && cd ../client && npm i --include=dev",
     "client": "cd client && npm start"
   },
   "keywords": [],
